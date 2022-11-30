@@ -9,15 +9,34 @@ import { response } from 'express';
 })
 export class ProductService {
 
-  private baseURl= 'http://localhost:8080/api/products?size=100'
+
+
+  private allProductsURL='http://localhost:8080/api/products?size=100'
+
+  private baseURl= 'http://localhost:8080/api/products'
+
 
   constructor(private _httpClient: HttpClient) { }
 
 
-  getProductList(): Observable<Product[]>{
-    return this._httpClient.get<getResponse>(this.baseURl).pipe(
-      map(response=>response._embedded.products)
-    )
+  getProductList(theCategoryId:number): Observable<Product[]>{
+    
+ //@TODO: need to build a URL base on the category id;
+    const searchURl= `${this.baseURl}/search/findByCategoryId?id=${theCategoryId}`
+
+    if(theCategoryId===1000){
+
+      return this._httpClient.get<getResponse>(this.allProductsURL).pipe(
+        map(response=>response._embedded.products)
+      )
+      
+    }else{
+
+      return this._httpClient.get<getResponse>(searchURl).pipe(
+        map(response=>response._embedded.products)
+      )
+      
+    } 
   }
 
 
