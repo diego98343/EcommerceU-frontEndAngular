@@ -40,10 +40,8 @@ if(hasCategoryId){
   //not category id available...default to category id 0
   this.currentCategoryId=100;
 
- 
- 
-
 }
+
     this.productService.getProductList(this.currentCategoryId).subscribe(
       data=> {
         // console.log('products= '+JSON.stringify(data))

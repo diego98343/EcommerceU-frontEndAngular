@@ -7,7 +7,9 @@ import { AppComponent } from './app.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import {HttpClientModule} from "@angular/common/http";
 import { RouterModule, Routes } from '@angular/router';
-import { ProductCategoryMenuComponent } from './components/product-category-menu/product-category-menu.component';
+
+import { ProductCategoryMedu2Component } from './components/product-category-medu2/product-category-medu2.component';
+
 
 
 
@@ -23,7 +25,9 @@ const routers: Routes=[
   declarations: [
     AppComponent,
     ProductListComponent,
-    ProductCategoryMenuComponent
+  
+    ProductCategoryMedu2Component,
+
   ],
   imports: [
     RouterModule.forRoot(routers),
