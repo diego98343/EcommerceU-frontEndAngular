@@ -38,7 +38,7 @@ if(hasCategoryId){
   this.currentCategoryId = +this.route.snapshot.paramMap.get('id')! 
 }else{
   //not category id available...default to category id 0
-  this.currentCategoryId=1;
+  this.currentCategoryId=100;
 
  
  
@@ -46,6 +46,7 @@ if(hasCategoryId){
 }
     this.productService.getProductList(this.currentCategoryId).subscribe(
       data=> {
+        // console.log('products= '+JSON.stringify(data))
         this.product= data
       }
     )

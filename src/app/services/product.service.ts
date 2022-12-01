@@ -16,6 +16,8 @@ export class ProductService {
 
   private baseURl= 'http://localhost:8080/api/products'
 
+  private allProductsURL= 'http://localhost:8080/api/products?size=100'
+
 
   constructor(private _httpClient: HttpClient) { }
 
@@ -25,6 +27,12 @@ export class ProductService {
  //@TODO: need to build a URL base on the category id;
     const searchURl= `${this.baseURl}/search/findByCategoryId?id=${theCategoryId}`
 
+      if(theCategoryId===100){
+        return this._httpClient.get<getResponseProduct>(this.allProductsURL).pipe(
+          map(response=>response._embedded.products)
+        ) 
+      }
+     
       return this._httpClient.get<getResponseProduct>(searchURl).pipe(
         map(response=>response._embedded.products)
       ) 

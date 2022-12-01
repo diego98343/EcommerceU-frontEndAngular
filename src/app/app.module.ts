@@ -14,8 +14,8 @@ import { ProductCategoryMenuComponent } from './components/product-category-menu
 const routers: Routes=[
   {path:'category/:id',component: ProductListComponent},
   {path:'category',component: ProductListComponent},
+  {path:'',component: ProductListComponent},
   {path:'',redirectTo:'/products',pathMatch:'full'},
-  {path:'**',redirectTo:'/products',pathMatch:'full'},
   {path:'**',redirectTo:'',pathMatch:'full'},
 ]
 
