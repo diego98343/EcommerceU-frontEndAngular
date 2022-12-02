@@ -11,10 +11,10 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class ProductCategoryMedu2Component implements OnInit {
 
-  productCategory: ProductCategory[]=[];
+  productCategories: ProductCategory[]=[];
 
 
-  product: Product[]=[];
+ 
   
   constructor(private productService:ProductService) { }
 
@@ -28,7 +28,7 @@ export class ProductCategoryMedu2Component implements OnInit {
     this.productService.getProductCategories().subscribe(
       data =>{
         console.log('productCateogory2 = '+JSON.stringify(data))
-        this.productCategory=data
+        this.productCategories=data
       }
     );
   }
