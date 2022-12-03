@@ -9,11 +9,13 @@ import {HttpClientModule} from "@angular/common/http";
 import { RouterModule, Routes } from '@angular/router';
 
 import { ProductCategoryMedu2Component } from './components/product-category-medu2/product-category-medu2.component';
+import { SearchComponent } from './components/search/search.component';
 
 
 
 
 const routers: Routes=[
+  {path:'search/:keyword',component:ProductListComponent},
   {path:'category/:id',component: ProductListComponent},
   {path:'category',component: ProductListComponent},
   {path:'',component: ProductListComponent},
@@ -27,6 +29,7 @@ const routers: Routes=[
     ProductListComponent,
   
     ProductCategoryMedu2Component,
+       SearchComponent,
 
   ],
   imports: [
