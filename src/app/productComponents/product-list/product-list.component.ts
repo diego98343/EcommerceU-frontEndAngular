@@ -1,18 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { isEmpty } from 'rxjs';
 import { Product } from 'src/app/models/product';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-product-list',
-  templateUrl: './product-list.component.html',
+  templateUrl: './product-list-grid.component.html',
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
 
   product: Product[]=[];
   currentCategoryId: number=1;
-  searchMode: boolean=false;
+  searchMode: boolean=false; 
+
+ 
 
   constructor(private productService: ProductService,
               private route: ActivatedRoute 

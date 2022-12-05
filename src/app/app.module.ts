@@ -4,18 +4,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { ProductListComponent } from './components/product-list/product-list.component';
+import { ProductListComponent } from './productComponents/product-list/product-list.component';
 import {HttpClientModule} from "@angular/common/http";
 import { RouterModule, Routes } from '@angular/router';
 
-import { ProductCategoryMedu2Component } from './components/product-category-medu2/product-category-medu2.component';
-import { SearchComponent } from './components/search/search.component';
+import { ProductCategoryMedu2Component } from './productComponents/product-category-medu2/product-category-medu2.component';
+import { SearchComponent } from './productComponents/search/search.component';
+import { ProductDetailsComponent } from './productComponents/product-details/product-details.component';
 
 
 
 
 const routers: Routes=[
   {path:'search/:keyword',component:ProductListComponent},
+  {path:'products/:id',component:ProductDetailsComponent},
   {path:'category/:id',component: ProductListComponent},
   {path:'category',component: ProductListComponent},
   {path:'',component: ProductListComponent},
@@ -30,6 +32,7 @@ const routers: Routes=[
   
     ProductCategoryMedu2Component,
        SearchComponent,
+       ProductDetailsComponent,
 
   ],
   imports: [
