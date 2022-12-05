@@ -10,6 +10,8 @@ import { ProductCategory } from '../models/product-category';
   providedIn: 'root'
 })
 export class ProductService {
+  
+ 
 
 
 
@@ -37,6 +39,18 @@ export class ProductService {
           map(response=>response._embedded.products)
         ) 
       }
+  }
+
+
+  getProduct(theProductId: number):Observable<Product>{
+    
+    //need to build url based on produt id
+
+    const productUrl=`${this.baseURl}/${theProductId}`
+
+    return this._httpClient.get<Product>(productUrl);
+
+
   }
 
 
