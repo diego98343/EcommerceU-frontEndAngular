@@ -12,7 +12,7 @@ import { ProductCategoryMedu2Component } from './productComponents/product-categ
 import { SearchComponent } from './productComponents/search/search.component';
 import { ProductDetailsComponent } from './productComponents/product-details/product-details.component';
 
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 const routers: Routes=[
@@ -40,6 +40,8 @@ const routers: Routes=[
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    NgbModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
