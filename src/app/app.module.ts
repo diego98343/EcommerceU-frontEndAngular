@@ -21,8 +21,8 @@ const routers: Routes=[
   {path:'category/:id',component: ProductListComponent},
   {path:'category',component: ProductListComponent},
   {path:'',component: ProductListComponent},
-  {path:'',redirectTo:'/products',pathMatch:'full'},
-  {path:'**',redirectTo:'',pathMatch:'full'},
+  {path:'',redirectTo:'category/1',pathMatch:'full'},
+  {path:'**',redirectTo:'category/1',pathMatch:'full'},
 ]
 
 @NgModule({
