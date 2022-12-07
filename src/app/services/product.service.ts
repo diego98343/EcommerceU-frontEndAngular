@@ -25,21 +25,21 @@ export class ProductService {
   constructor(private _httpClient: HttpClient) { }
 
 
-//   getProductList(theCategoryId:number): Observable<Product[]>{   
-//  //@TODO: need to build a URL base on the category id;
-//     const searchURl= `${this.baseURl}/search/findByCategoryId?id=${theCategoryId}`
+  getProductList(theCategoryId:number): Observable<Product[]>{   
+ //@TODO: need to build a URL base on the category id;
+    const searchURl= `${this.baseURl}/search/findByCategoryId?id=${theCategoryId}`
 
-//       if(theCategoryId===100){
-//         return this._httpClient.get<getResponseProduct>(this.allProductsURL).pipe(
-//           map(response=>response._embedded.products)
-//         ) 
-//       }else{
+      if(theCategoryId===100){
+        return this._httpClient.get<getResponseProduct>(this.allProductsURL).pipe(
+          map(response=>response._embedded.products)
+        ) 
+      }else{
 
-//         return this._httpClient.get<getResponseProduct>(searchURl).pipe(
-//           map(response=>response._embedded.products)
-//         ) 
-//       }
-//   }
+        return this._httpClient.get<getResponseProduct>(searchURl).pipe(
+          map(response=>response._embedded.products)
+        ) 
+      }
+  }
 
 
   getProductListPaginate(thePage:number,
@@ -56,6 +56,21 @@ export class ProductService {
          return this._httpClient.get<getResponseProduct>(searchURl);               
 
      }
+
+     searchProductPaginate(thePage:number,
+                           thePageSize:number,
+                           theKeyWord:string): Observable<getResponseProduct>{   
+
+//@TODO: need to build a URL base on the category id, page and size;
+       const searchURl= `${this.baseURl}/search/findByNameContaining?name=${theKeyWord}`
+                         +`&page=${thePage}&size=${thePageSize}`;
+
+
+
+
+       return this._httpClient.get<getResponseProduct>(searchURl);               
+
+  }
 
 
 
@@ -92,10 +107,6 @@ export class ProductService {
 
 }
 
-
-
-
-  
 
 interface getResponseProduct{
   _embedded:{

@@ -13,6 +13,7 @@ import { SearchComponent } from './productComponents/search/search.component';
 import { ProductDetailsComponent } from './productComponents/product-details/product-details.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CartStatusComponent } from './productComponents/cart-status/cart-status.component';
 
 
 const routers: Routes=[
@@ -33,6 +34,7 @@ const routers: Routes=[
     ProductCategoryMedu2Component,
        SearchComponent,
        ProductDetailsComponent,
+       CartStatusComponent,
 
   ],
   imports: [
